@@ -23,6 +23,9 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    <script>
+    </script>
 
 </head>
 
@@ -43,12 +46,13 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">  
+                <ul class="nav navbar-nav" style="float:right;">  
                     <li>
                         <a href="#">購物車</a>
                     </li>
                     <li>
-                        <a href="#">登入/註冊</a>
+                        <a href="#" data-toggle="modal" data-target="#loginModal">登入/註冊</a>
+                        <a href="#" class="btn btn-primagry hidden" id="btn-logout" data-toggle="modal" data-target="#loginModal">登出</a>
                     </li>
                 </ul>
             </div>
@@ -83,13 +87,13 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    <img class="slide-image" src="img/banner01.jpg" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    <img class="slide-image" src="img/banner02.jpg" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    <img class="slide-image" src="img/banner03.png" alt="">
                                 </div>
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -104,7 +108,7 @@
                 </div>
 
                 <div class="row">
-
+                    <h3>熱門商品 <span class="label label-danger">New</span></h3><hr>
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
                             <img src="http://placehold.it/320x150" alt="">
@@ -169,7 +173,10 @@
                                 </p>
                             </div>
                         </div>
+                        <br><br>
                     </div>
+
+                    <h3>哈燒手機 <span class="label label-danger">New</span></h3><hr>
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
@@ -192,7 +199,7 @@
                             </div>
                         </div>
                     </div>
-
+                    
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
                             <img src="http://placehold.it/320x150" alt="">
@@ -216,10 +223,94 @@
                     </div>
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
-                        <h4><a href="#">Like this template?</a>
-                        </h4>
-                        <p>If you like this template, then check out <a target="_blank" href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">this tutorial</a> on how to build a working review system for your online store!</p>
-                        <a class="btn btn-primary" target="_blank" href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">View Tutorial</a>
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$24.99</h4>
+                                <h4><a href="#">First Product</a>
+                                </h4>
+                                <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+                        </div>
+                        <br><br>
+                    </div>
+                    
+                    <br><br><h3>巨屏平板 <span class="label label-danger">New</span></h3><hr>
+                    
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$24.99</h4>
+                                <h4><a href="#">First Product</a>
+                                </h4>
+                                <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$24.99</h4>
+                                <h4><a href="#">First Product</a>
+                                </h4>
+                                <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$24.99</h4>
+                                <h4><a href="#">First Product</a>
+                                </h4>
+                                <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -227,6 +318,72 @@
             </div>
 
         </div>
+
+    
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">會員中心</h4>
+      </div>
+      <div class="modal-body">
+       <ul class="nav nav-pills nav-justified" id="tab-login">
+          <li class="active"><a data-toggle="tab" href="#content-login">登入</a></li>
+          <li><a data-toggle="tab" href="#content-register">註冊</a></li>
+        </ul>
+        <hr/>
+        
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="content-login">
+            <form id="frm-login">
+              <div class="form-group">
+                <input type="text" class="form-control" id="login-user-name" placeholder="帳號">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" id="login-user-password" placeholder="密碼">
+              </div>
+            </form>
+          </div>
+          
+          <div role="tabpanel" class="tab-pane" id="content-register">
+            <form id="frm-reg">
+              <div class="form-group">
+                <input type="text" class="form-control" id="reg-user-name" placeholder="帳號">
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" id="reg-user-email" placeholder="請填入有效信箱，忘記密碼時以該信箱為補發">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" id="reg-user-password" placeholder="密碼">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" id="reg-user-re-password" placeholder="再次確認密碼">
+              </div>
+            </form>
+          </div>
+          
+          <div role="tabpanel" class="tab-pane" id="content-forget-pw">
+            <form id="frm-forget-pw">
+              <div class="form-group">
+                <input type="email" class="form-control" id="forget-pw-email" placeholder="註冊時填寫的信箱">
+              </div>
+            </form>
+          </div>
+        </div>
+        
+        <p class="text-danger hidden" id="loginErr"></p>
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" id="btn-send-form">送出</button>
+      </div>
+    </div>
+  </div>
+</div>
 
     </div>
     <!-- /.container -->
@@ -239,7 +396,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; 靠爸唉鳳 2015</p>
                 </div>
             </div>
         </footer>
@@ -252,6 +409,261 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+
+ <script type="text/javascript">
+  Parse.initialize("vPNWzwzlR5SGTzhFkXrWEQi1h2mgVXjB9NJpq4qM", "p3KCBMStwRe5ZEepsKQKQPOMcldpqSqszwK0Kqyk");
+  
+  
+  (function($) {
+    var $loginModal = $("#loginModal");
+    
+    //初始用戶狀態
+    var currentUser = Parse.User.current();
+    
+    // 收起 modal 時
+    $('.modal').on('hidden.bs.modal', function(){
+      var $modal = $(this);
+      var modalFormList = $modal.find('form');
+      for (var i=0; i<modalFormList.length; i++) {
+        modalFormList[i].reset();
+      }
+      // 登入modal 關閉前要將狀態切回去
+      if($modal.attr("id") == "loginModal") {
+        $modal.find("ul li:nth-child(1) a").tab('show');
+        $modal.find("#loginErr").addClass("hidden").text("");
+      } else {
+        $modal.find("#newPointErr").addClass("hidden").text("");
+      }
+    });
+    
+    // 提交 登入/註冊/忘記密碼
+    $("#btn-send-form").click(function(){      
+      var activeTabText = $("ul#tab-login li.active a").text();
+      var $frm = $loginModal.find("div.tab-pane.active form");
+      
+      if(activeTabText == "登入") {
+        Parse.User.logIn($frm.find("#login-user-name").val(), $frm.find("#login-user-password").val(), {
+          success: function(user) {
+            $loginModal.modal('hide');
+            alert('hello!!');
+          },
+          error: function(user, error) {
+            $loginModal.find("#loginErr").text("錯誤: [" + error.code + "] " + error.message).removeClass("hidden");
+          }
+        });
+        
+      } else if(activeTabText == "註冊") {
+        var user = new Parse.User();
+        var name = $frm.find("#reg-user-name").val();
+        var email = $frm.find("#reg-user-email").val();
+        var pw = $frm.find("#reg-user-password").val();
+        if(pw === $frm.find("#reg-user-re-password").val()){
+          user.set("username", name);
+          user.set("email", email);
+          user.set("password", pw);
+                  
+          user.signUp(null, {
+            success: function(user) {
+              $loginModal.modal('hide');
+              location.reload();           
+            },
+            error: function(user, error) {
+              $loginModal.find("#loginErr").text("錯誤: [" + error.code + "] " + error.message).removeClass("hidden");
+            }
+          });
+        }else{
+          $loginModal.find("#loginErr").text("密碼不一致，請重新輸入").removeClass("hidden").stop()
+            .find("#reg-user-password, #reg-user-re-password").val("");
+        }
+        
+      } else if(activeTabText == "忘記密碼") {
+        var email = $frm.find("#forget-pw-email").val();
+        
+        Parse.User.requestPasswordReset(email, {
+          success: function() {
+            $loginModal.modal('hide');
+            setGlobalMsg(true, "忘記密碼 已處理 請至信箱收信");
+          },
+          error: function(error) {
+            $loginModal.find("#loginErr").text("錯誤: [" + error.code + "] " + error.message).removeClass("hidden");
+          }
+        });
+      }
+    });
+    
+    // 登出
+    $("#btn-logout").click(function() {
+      Parse.User.logOut();
+      location.reload();
+    });
+    
+    // 忘記密碼
+    $("#forget-pw").click(function() {
+      Parse.User.requestPasswordReset("email@example.com", {
+        success: function() {
+          setGlobalMsg(true, "忘記密碼 成功，請至信箱收信");
+        },
+        error: function(error) {
+          setGlobalMsg(false, "忘記密碼 失敗", error);
+        }
+      });
+    });
+    
+    // 新增地圖
+    $("#create-new-map").click(function(){
+      var MyMap = Parse.Object.extend("MyMap");
+      var myMap = new MyMap();
+      myMap.set("name", $("#new-map-name").val());
+      myMap.set("author", currentUser);
+      
+      var myMapACL = new Parse.ACL(currentUser);
+      myMapACL.setPublicReadAccess(true);
+      myMap.setACL(myMapACL);
+      myMap.save(null, {
+        success: function(object){
+          setGlobalMsg(true, "新增地圖 成功 "+object.id);
+          window.location.href = '?mapId='+object.id;
+        },
+        error: function(model, error) {
+          setGlobalMsg(false, "新增地圖 失敗", error);
+        }
+      });
+      
+    });
+    
+    // 新增地點
+    $("#btn-send-point").click(function(){
+      var MapPoint = Parse.Object.extend("MapPoint");
+      var mapPoint = new MapPoint();
+      
+      mapPoint.set("name", $("#point-name").val());
+      mapPoint.set("addr", $("#point-addr").val());
+      mapPoint.set("map", gMapId);// 用 id 存關聯
+      
+      var myACL = new Parse.ACL(currentUser);
+      myACL.setPublicReadAccess(true);
+      mapPoint.setACL(myACL);
+      
+      mapPoint.save(null, {
+        success: function(object){
+          setGlobalMsg(true, "新增地點 成功 "+object.id);
+          addPoint(object);
+          $("#newPointModal").modal('hide');
+        },
+        error: function(model, error) {
+          $("#newPointErr").text("錯誤: [" + error.code + "] " + error.message).removeClass("hidden");
+        }
+      });
+      
+    });
+    
+    // -------------------------------------
+    initPage(gMapId);
+    setUserStatusUI(currentUser);
+    
+  })(jQuery);
+  
+  // 註冊/登入 後
+  function afterLogin(user){
+    setUserStatusUI(user);
+  }
+
+  // 初始化地圖頁面
+  function initPage(mapId) {
+    Parse.Cloud.run('initPage', { mapId: mapId }, {
+      success: function(result) {
+        setGlobalMsg(true, "初始頁面成功");
+        
+        var userMapInfoList = result.userMapInfoList;
+        var mapLiNodes = [];
+        gMapId = result.targetMapId;
+        for (var i=0; i<userMapInfoList.length; i++) {
+          if(userMapInfoList[i].mapId == result.targetMapId) {
+            mapLiNodes.push(
+              $('<li>').append(userMapInfoList[i].name)
+            );
+          } else {
+            mapLiNodes.push(
+              $('<li>').append(
+                  $('<a>').attr('href','?mapId='+userMapInfoList[i].mapId)
+                    .text(userMapInfoList[i].name)
+            ));
+          }
+        }
+        if(mapLiNodes.length) {
+          $("#myMapList").html(mapLiNodes);
+        }
+        
+        $("#targetMapName").text(result.targetMapName);
+        $("#targetMapAuthorName").text(result.targetMapAuthorName);
+        
+        for(var i=0; i<result.points.length; i++) {
+          addPoint(result.points[i]);
+        }
+        
+        if(result.editable){
+          $("#create-new-point").removeClass("hidden");
+        } else {
+          $("#create-new-point").addClass("hidden");
+        }
+      },
+      error: function(error) {
+        setGlobalMsg(false, "初始頁面失敗", error);
+      }
+    });
+  }
+  
+  // 初始頁面 使用者狀態 相關UI 登入/登出，歡迎詞
+  function setUserStatusUI(currentUser) {
+    if (currentUser) {
+      $("#welcome").text(currentUser.get("username") + ", 您好~ ");
+      
+      $("#btn-login").addClass("hidden");
+      $("#btn-logout").removeClass("hidden");
+    } else {
+      $("#welcome").text("Guest，歡迎~ ");
+      
+      $("#btn-login").removeClass("hidden");
+      $("#btn-logout").addClass("hidden");
+    }
+  }
+  
+  function getUrlVars()
+  {
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+      hash = hashes[i].split('=');
+      vars.push(hash[0]);
+      vars[hash[0]] = hash[1];
+    }
+    return vars;
+  }
+  
+  function setGlobalMsg(isSuccess, msg, error) {
+    if(isSuccess) {
+      $("#globalSuccess").text(msg);
+    } else if(error) {
+      $("#globalFail").text(msg + " [" + error.code + "] " + error.message);
+    } else {
+      $("#globalFail").text(msg);
+    }
+    //.fadeOut(1600);
+  }
+  
+  function addPoint(pointObj){
+    $("#tblMapPoint tbody").append( "<tr>"+
+      "<td>"+pointObj.id+"</td>"+ 
+      "<td>"+pointObj.get("name")+"</td>"+ 
+      "<td>"+pointObj.get("addr")+"</td>"+
+    "</tr>");
+  };
+  
+</script>
+
+
 
 </body>
 
