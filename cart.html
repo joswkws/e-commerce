@@ -28,8 +28,9 @@
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
     <script type="text/javascript">
+        var currentUser="abc";
         Parse.initialize("vPNWzwzlR5SGTzhFkXrWEQi1h2mgVXjB9NJpq4qM", "p3KCBMStwRe5ZEepsKQKQPOMcldpqSqszwK0Kqyk");
-
+        var total=0;
         var cart = Parse.Object.extend("Cart");
         var query = new Parse.Query(cart);
         query.equalTo("username", "abc");
@@ -37,26 +38,43 @@
           success: function(results) {
             //alert("Successfully retrieved " + results.length + " scores.");
             // Do something with the returned Parse.Object values
+
             for (var i = 0; i < results.length; i++) {
                 var object = results[i];
-               // alert(object.get('productname'));
-                var sum = object.get('price')*object.get('quantity');
+                if(object.get('status')==true){
+                    var sum = object.get('price')*object.get('quantity');
+                    addPoint(object,sum);
+                    total=total+sum;
+                }
+                // alert(object.get('productname'));
                 
-                addPoint(object,sum);
+                //alert(total);
             }
+             $(".total").append("總共: "+total);
           },
           error: function(error) {
             alert("Error: " + error.code + " " + error.message);
           }
         });
-        function addPoint(object,sum){
-            $("#table").append( "<tr>"+
-              "<td>"+object.get("productname")+"</td>"+ 
-              "<td>"+object.get("quantity")+"</td>"+ 
-              "<td>"+object.get("price")+"</td>"+
-              "<td>"+sum+"</td>"+
-            "</tr>");
-        };
+
+    function addPoint(object,sum){
+        $("#table").append( "<tr>"+
+          "<td><a href='#'>"+object.get("productname")+"</a></td>"+ 
+          "<td>"+object.get("quantity")+"</td>"+ 
+          "<td>"+object.get("price")+"</td>"+
+          "<td>"+sum+"</td>"+
+        "</tr>");
+    }
+    
+    function sendOrder(){
+        var receiver = document.receive.receiver.value;
+        var address = document.receive.address.value;
+        var phone = document.receive.phone.value;
+        var remark = document.receive.remark.value;
+        var paidtype = document.receive.paidtype.value;
+        alert(receiver+address+phone+paidtype+currentUser); 
+           
+    }
 
     </script>
 
@@ -64,9 +82,12 @@
 </head>
 
 <body>
-
+    <div class="title">
+        <p>購物清單</p>
+    </div>
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -99,16 +120,54 @@
     <div class="container">
         <table id="table">
             <tr>
-                <td>物品名稱</td>
-                <td>數量</td>
-                <td>單價</td>
-                <td>總價</td>
+                <th>物品名稱</th>
+                <th>數量</th>
+                <th>單價</th>
+                <th>總價</th>
             </tr>
         </table>
-    <div class="total"></div>
+        <div class="total"></div>
 
     </div>
+    <hr>
+    <div class="title">
+        <p>訂購資訊</p>
+    </div>
 
+    <div class="order">
+        <table>
+        <form name="receive">
+            <tr>
+                <td>收件人:</td>
+                <td><input type="text" name="receiver"></td>
+            </tr> 
+            <tr>
+                <td>地址:</td>
+                <td><input type="text" name="address"></td>
+            </tr>
+            <tr>
+                <td>電話:</td>
+                <td><input type="text" name="phone"></td>
+            </tr>
+            <tr>
+                <td>備註:</td>
+                <td><input type="text" name="remark"></td>
+            </tr>
+            <tr>
+                <td>付款方式:</td>
+                <td>
+                    <input type="radio" name="paidtype" value="信用卡" checked>信用卡<br>
+                    <input type="radio" name="paidtype" value="匯款">匯款<br>
+                    <input type="radio" name="paidtype" value="貨到付款">貨到付款
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" onclick="sendOrder" value="送出訂單"></td>
+            </tr>
+        </form>
+        </table>
+    </div>
+    
 
 
 
